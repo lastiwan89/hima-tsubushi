@@ -10,28 +10,41 @@ export default function Header() {
   }
 
   return (
-    <header className="mb-14 flex flex-row place-content-between bg-slate-600 px-6 py-4 md:px-14 md:py-8">
+    <header className="bg-bluish mb-14 flex flex-row place-content-between px-6 py-4 md:px-14 md:py-8">
       <div className="flex items-center justify-center">
-        <Link className="font-sans font-bold dark:text-slate-200" to="/">
-          chill.rains
+        <Link className="text-navish font-sans font-bold" to="/">
+          Toko Sumatra
         </Link>
       </div>
       <ul className="hidden gap-8 font-semibold md:flex">
-        <Link className="hover:text-orange-500 dark:text-white" to="/">
+        <Link className="hover:text-oranges text-navish" to="/">
           home
         </Link>
-        <Link className="hover:text-orange-500 dark:text-white" to="/work">
+        <Link className="hover:text-oranges text-navish" to="/work">
           work
         </Link>
-        <Link className="hover:text-orange-500 dark:text-white" to="/about">
+        <Link className="hover:text-oranges text-navish" to="/about">
           about
         </Link>
       </ul>
-      <div className="md:hidden" onClick={handleClick}>
+      <div className="relative md:hidden" onClick={handleClick}>
         {isOpen ? (
           <IoMdClose className="h-10 w-10 text-white" />
         ) : (
           <IoMdMenu className="h-10 w-10 text-white" />
+        )}
+        {isOpen && (
+          <ul className="top-18 bg-bluish fixed right-0 flex h-full w-full flex-col items-center gap-8 p-12 font-semibold">
+            <Link className="hover:text-oranges text-navish" to="/">
+              home
+            </Link>
+            <Link className="hover:text-oranges text-navish" to="/work">
+              work
+            </Link>
+            <Link className="hover:text-oranges text-navish" to="/about">
+              about
+            </Link>
+          </ul>
         )}
       </div>
     </header>
